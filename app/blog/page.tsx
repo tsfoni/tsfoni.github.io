@@ -5,6 +5,27 @@ import { getSortedPostsData } from '@/src/lib/posts';
 export const metadata = {
   title: 'Blog - Harel Tsfoni',
   description: 'Technical analyses, reverse engineering write-ups, and threat intelligence reports.',
+  openGraph: {
+    title: 'Blog - Harel Tsfoni',
+    description: 'Technical analyses, reverse engineering write-ups, and threat intelligence reports.',
+    url: 'https://tsfoni.github.io/blog/',
+    siteName: 'Harel Tsfoni',
+    images: [
+      {
+        url: 'https://avatars.githubusercontent.com/u/104026572',
+        width: 1200,
+        height: 630,
+        alt: 'Harel Tsfoni Blog',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Harel Tsfoni',
+    description: 'Technical analyses, reverse engineering write-ups, and threat intelligence reports.',
+    images: ['https://avatars.githubusercontent.com/u/104026572'],
+  },
 };
 
 export default function BlogListPage() {

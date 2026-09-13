@@ -21,9 +21,46 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   try {
     const post = await getPostData(params.slug);
+    const postUrl = `https://tsfoni.github.io/blog/${params.slug}/`;
+    const postDescription = post.summary || post.title;
+
+    // Detect first image if any in post markdown, otherwise use avatar
+    const imgMatch = post.contentHtml?.match(/<img[^>]+src="([^">]+)"/);
+    let imageUrl = 'https://avatars.githubusercontent.com/u/104026572';
+    if (imgMatch && imgMatch[1]) {
+      const src = imgMatch[1];
+      imageUrl = src.startsWith('http') ? src : `https://tsfoni.github.io${src}`;
+    }
+
     return {
       title: `${post.title} - Harel Tsfoni`,
-      description: post.summary || post.title,
+      description: postDescription,
+      alternates: {
+        canonical: postUrl,
+      },
+      openGraph: {
+        title: post.title,
+        description: postDescription,
+        url: postUrl,
+        siteName: 'Harel Tsfoni',
+        type: 'article',
+        publishedTime: post.date,
+        authors: ['Harel Tsfoni'],
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.title,
+        description: postDescription,
+        images: [imageUrl],
+      },
     };
   } catch {
     return {

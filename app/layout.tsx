@@ -18,11 +18,40 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: 'Harel Tsfoni - Tech, Systems & Security',
+  metadataBase: new URL('https://tsfoni.github.io'),
+  title: {
+    default: 'Harel Tsfoni - Tech, Systems & Security',
+    template: '%s - Harel Tsfoni',
+  },
   description:
-    'Building random programs, reverse engineering malware, and tinkering with systems and infrastructure.',
+    'Building random programs, reverse engineering, and tinkering with systems and infrastructure.',
   icons: {
     icon: 'https://avatars.githubusercontent.com/u/104026572',
+    apple: 'https://avatars.githubusercontent.com/u/104026572',
+  },
+  openGraph: {
+    title: 'Harel Tsfoni - Tech, Systems & Security',
+    description:
+      'Building random programs, reverse engineering, and tinkering with systems and infrastructure.',
+    url: 'https://tsfoni.github.io',
+    siteName: 'Harel Tsfoni',
+    images: [
+      {
+        url: 'https://avatars.githubusercontent.com/u/104026572',
+        width: 1200,
+        height: 630,
+        alt: 'Harel Tsfoni',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Harel Tsfoni - Tech, Systems & Security',
+    description:
+      'Building random programs, reverse engineering, and tinkering with systems and infrastructure.',
+    images: ['https://avatars.githubusercontent.com/u/104026572'],
   },
 };
 
