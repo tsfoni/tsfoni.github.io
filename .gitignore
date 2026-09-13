@@ -1,3 +1,17 @@
-/public/
-/resources/
+# Next.js
+.next/
+out/
+node_modules/
+
+# Environment
+.env
+.env.*
+*.env
+
+# System
+.DS_Store
+*.pem
+
+# Hugo legacy
+resources/
 .hugo_build.lock
