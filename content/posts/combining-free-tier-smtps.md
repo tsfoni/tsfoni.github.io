@@ -22,6 +22,8 @@ Once you hit that limit, bad things happen:
 
 And that's when the real nightmare begins.
 
+> **TL;DR:** Most cloud email providers (Resend, Brevo, SendGrid) offer solid free tiers but cap you at 100–300 emails/day. I vibe-coded [SmartRelay](https://github.com/tsfoni/SmartRelay)—a lightweight ~35MB SMTP proxy that pools multiple free accounts, automatically tracks daily quotas, and seamlessly fails over when one runs out. It gives my side projects **800+ free emails/day** for $0 without writing custom routing logic in my apps.
+
 ---
 
 ## The "duct tape" trap
